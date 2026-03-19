@@ -9,7 +9,7 @@ public class Program
         User user1 = new User("Andrew", "Kotowiecki", 21, "Admin");
         Equipment tool = new Equipment("Hammer", "cool", true, 233.1, "woodWork");
         
-        Console.WriteLine(user1.Name);
-        Console.WriteLine(tool.Name);
+        Console.WriteLine(user1);
+        Console.WriteLine(tool);
     }
 }

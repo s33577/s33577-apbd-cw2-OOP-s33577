@@ -23,4 +23,16 @@ public class Equipment
     {
         return new Random().Next(1000, 10000);
     }
+
+    public virtual string ToString()
+    {
+        if (Status)
+        {
+            return Name + " " + Description +  " " + Price + " " + Category;    
+        }
+
+        return null;
+
+    }
+
 }
