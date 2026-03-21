@@ -4,34 +4,30 @@ public class Equipment
 {
     public string Name { get; set; }
     public string Description { get; set; }
-    public bool Status { get; set; }
+    public bool IsAvailable { get; set; }
     public double Price { get; set; }
-    public string Category { get; set; }
     public int Id { get; set; }
 
-    public Equipment(string name, string description, bool status, double price, string category)
+    public Equipment(string name, string description, double price)
     {
+        Id = GenerateRandomId();
         Name = name;
         Description = description;
-        Status = status;
+        IsAvailable = true;
         Price = price;
-        Category = category;
-        Id = GenerateRandomId();
     }
+    
+    
 
     private int GenerateRandomId()
     {
         return new Random().Next(1000, 10000);
     }
 
-    public virtual string ToString()
+    public override string ToString()
     {
-        if (Status)
-        {
-            return Name + " " + Description +  " " + Price + " " + Category;    
-        }
-
-        return null;
+        var status = IsAvailable ? "Avaiable" : "Unavailable";
+        return $"[{Id}] {Name} {status} - {Price}/day";
 
     }
 

@@ -6,10 +6,8 @@ public class Program
 {
     public static void Main()
     {
-        User user1 = new User("Andrew", "Kotowiecki", 21, "Admin");
-        Equipment tool = new Equipment("Hammer", "cool", true, 233.1, "woodWork");
-        
-        Console.WriteLine(user1);
-        Console.WriteLine(tool);
+        Laptop lap = new Laptop("MSI", "Pure gaming", 111.11, 16, "i-3333", "z33", "msi");
+        Console.WriteLine(lap);
+
     }
 }
