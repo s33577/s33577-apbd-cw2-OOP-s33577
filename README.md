@@ -25,6 +25,28 @@ Interactive console menu with specific options:
   11. Overall Raport
   12. QUIT (Terminate Session)
 
+After Running the code the Console UI should look like this:
+```
+Equipment Rental System
+**** MENU ****
+1. Add user
+2. Add equipment
+3. List all equipment
+4. List all Avaiable equipment
+5. List all users
+6. Mark equipment as unavailable
+RENTALS
+7. Rent equipment
+8. Return equipment
+9. Show active rentals for a user
+10. Show overdue rentals
+REPORTS
+11. Summary Report
+END Session
+13. QUIT
+Enter an option:
+```
+
 ## Project Structure
 ConsoleApp1/
   Program.cs -> Console menu and user interaction
