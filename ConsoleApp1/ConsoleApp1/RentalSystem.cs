@@ -2,25 +2,25 @@
 
 public class RentalSystem
 {
-    private List<Rental> Rentals;
-    private List<Equipment> inventory;
-    private List<User> Users;
-    private double penaltyRate = 10.0;
+    private List<Rental> _rentals = new List<Rental>();
+    private List<Equipment> _inventory = new List<Equipment>();
+    private List<User> _users = new List<User>();
+    private double _penaltyRate = 10.0;
 
     public void AddEquipment(Equipment e)
     {
-        inventory.Add(e);
+        _inventory.Add(e);
     }
 
     public void AddUser(User user)
     {
-        Users.Add(user);
+        _users.Add(user);
     }
 
     public IEnumerable<Rental> getAvailableEquipments()
     {
-        inventory.Where(e => e.IsAvailable);
-        return Rentals;
+        _inventory.Where(e => e.IsAvailable);
+        return _rentals;
         
     }
 
@@ -30,7 +30,7 @@ public class RentalSystem
         {
             throw new InvalidOperationException("Equipment is not available");
         }   
-        int activeRentalsCount = Rentals.Count(r => r.User.Id == user.Id && r.IsActive);
+        int activeRentalsCount = _rentals.Count(r => r.User.Id == user.Id && r.IsActive);
         if (activeRentalsCount >= user.MaxActiveRentals)
         {
             throw new InvalidOperationException("You cannot rent more rentals");
@@ -38,7 +38,7 @@ public class RentalSystem
 
         e.IsAvailable = false;
         var rental = new Rental(user, e, days);
-        Rentals.Add(rental);
+        _rentals.Add(rental);
     }
     
     public void RetrunEquipment(Rental rental, DateTime actualRetrunDate) 
@@ -47,7 +47,7 @@ public class RentalSystem
         {
             throw new InvalidOperationException("Rental is not active");
         }
-        rental.MarkReturned(actualRetrunDate, penaltyRate);
+        rental.MarkReturned(actualRetrunDate, _penaltyRate);
         
     }
 
