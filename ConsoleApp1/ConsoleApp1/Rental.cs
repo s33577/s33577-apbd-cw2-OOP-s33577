@@ -11,6 +11,8 @@ public class Rental
     public double Penalty { get; set; }
 
     public bool IsActive => ReturnDate == null;
+    public bool IsOverdue => IsActive && DateTime.Now > ReturnDate;
+    
 
     public Rental(User user, Equipment equipment, int retalDays)
     {
@@ -34,6 +36,13 @@ public class Rental
             Penalty = 0;
         }
         
+    }
+
+    public override string ToString()
+    {
+        var status = IsActive ? (IsOverdue ? "Overdue" : "Active") : "retuned";
+        var penaltyInfo = Penalty > 0 ? $"Penalty: {Penalty}" : "";
+        return $"{status} {User.Name} {User.LastName} rented on {RentDate} Penalty: {penaltyInfo}";
     }
     
 

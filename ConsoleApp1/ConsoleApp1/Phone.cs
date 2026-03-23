@@ -12,4 +12,10 @@ public class Phone : Equipment
         OperatingSystem = operatingSystem;
         BatteryCapacity = batteryCapacity;
     }
+
+    public override string ToString()
+    {
+        return base.ToString() + $"OS: {OperatingSystem}, BatteryCapacity: {BatteryCapacity}";
+    }
+    
 }

@@ -16,6 +16,11 @@ public class Laptop : Equipment
         Model = model;
         Manufacturer = manufacturer;
     }
+
+    public override string ToString()
+    {
+        return base.ToString() + $" {Ram} RAM, Model: {Model}, Manufacturer: {Manufacturer}, Processor: {Processor}";
+    }
     
     
 }
