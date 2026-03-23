@@ -256,7 +256,7 @@ public class Program
         
         Console.WriteLine("Select rental number: ");
         int index = int.Parse(Console.ReadLine());
-        Rental rental = active[index];
+        Rental rental = active[index - 1];
 
         DateTime returnDate;
         returnDate = DateTime.Today;
