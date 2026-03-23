@@ -28,14 +28,23 @@ Interactive console menu with specific options:
 ## Project Structure
 ConsoleApp1/
   Program.cs -> Console menu and user interaction
+  
   RentalSystem.cs -> All system logic
+  
   Rental.cs -> Domain object
+  
   User.cs -> Abstract class for all users
+  
   Student.cs -> Student class with max 2 active rentals
+  
   Employee.cs -> Employee class with max 5 active rentals
+  
   Equipment.cs -> Abstract class for all equipment
+  
   Laptop.cs -> Laptop class viewed as an equipment
+  
   Phone.cs -> Phone class viewed as an equipment
+  
   TV.cs -> TV class viewed as an equipment
 
 ## Design 
